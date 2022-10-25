@@ -1,4 +1,4 @@
-FROM shoothzj/base
+FROM shoothzj/base:latest
 
 ENV METRICBEAT_HOME /opt/metricbeat
 

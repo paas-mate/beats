@@ -1,4 +1,4 @@
-FROM shoothzj/base
+FROM shoothzj/base:latest
 
 ENV HEARTBEAT_HOME /opt/heartbeat
 

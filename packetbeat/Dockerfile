@@ -1,4 +1,4 @@
-FROM shoothzj/base
+FROM shoothzj/base:latest
 
 ENV PACKETBEAT_HOME /opt/packetbeat
 
