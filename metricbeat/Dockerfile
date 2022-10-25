@@ -1,18 +1,18 @@
-FROM ttbb/base
+FROM shoothzj/base
 
-ENV METRICBEAT_HOME /opt/sh/metricbeat
+ENV METRICBEAT_HOME /opt/metricbeat
 
 ARG amd_download=8.4.3-linux-x86_64
 
 ARG arm_download=8.4.3-linux-arm64
 
-RUN if [[ "$TARGETARCH" = "amd64" ]]; \
+RUN if [ "$TARGETARCH" = "amd64" ]; \
     then download=$amd_download; \
     else download=$arm_download; \
     fi && \
     wget https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-$download.tar.gz && \
-    mkdir /opt/sh/metricbeat && \
-    tar -xf metricbeat-$download.tar.gz -C /opt/sh/metricbeat --strip-components 1 && \
-    rm -rf /opt/sh/metricbeat-$download.tar.gz
+    mkdir /opt/metricbeat && \
+    tar -xf metricbeat-$download.tar.gz -C /opt/metricbeat --strip-components 1 && \
+    rm -rf /opt/metricbeat-$download.tar.gz
 
-WORKDIR /opt/sh/metricbeat
+WORKDIR /opt/metricbeat

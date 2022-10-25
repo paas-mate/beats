@@ -1,18 +1,18 @@
-FROM ttbb/base
+FROM shoothzj/base
 
-ENV HEARTBEAT_HOME /opt/sh/heartbeat
+ENV HEARTBEAT_HOME /opt/heartbeat
 
 ARG amd_download=8.4.3-linux-x86_64
 
 ARG arm_download=8.4.3-linux-arm64
 
-RUN if [[ "$TARGETARCH" = "amd64" ]]; \
+RUN if [ "$TARGETARCH" = "amd64" ]; \
     then download=$amd_download; \
     else download=$arm_download; \
     fi && \
     wget https://artifacts.elastic.co/downloads/beats/heartbeat/heartbeat-$download.tar.gz && \
-    mkdir /opt/sh/heartbeat && \
-    tar -xf heartbeat-$download.tar.gz -C /opt/sh/heartbeat --strip-components 1 && \
-    rm -rf /opt/sh/heartbeat-$download.tar.gz
+    mkdir /opt/heartbeat && \
+    tar -xf heartbeat-$download.tar.gz -C /opt/heartbeat --strip-components 1 && \
+    rm -rf /opt/heartbeat-$download.tar.gz
 
-WORKDIR /opt/sh/heartbeat
+WORKDIR /opt/heartbeat
