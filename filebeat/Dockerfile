@@ -4,9 +4,9 @@ ARG TARGETARCH
 
 ENV FILEBEAT_HOME /opt/sh/filebeat
 
-ARG amd_download=7.17.5-linux-x86_64
+ARG amd_download=8.4.3-linux-x86_64
 
-ARG arm_download=7.17.5-linux-arm64
+ARG arm_download=8.4.3-linux-arm64
 
 RUN if [[ "$TARGETARCH" = "amd64" ]]; \
     then download=$amd_download; \
