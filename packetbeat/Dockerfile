@@ -1,5 +1,7 @@
 FROM shoothzj/base:latest
 
+ARG TARGETARCH
+
 ENV PACKETBEAT_HOME /opt/packetbeat
 
 ARG amd_download=8.4.3-linux-x86_64
