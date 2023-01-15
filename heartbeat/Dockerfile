@@ -4,9 +4,9 @@ ARG TARGETARCH
 
 ENV HEARTBEAT_HOME /opt/heartbeat
 
-ARG amd_download=8.4.3-linux-x86_64
+ARG amd_download=8.6.0-linux-x86_64
 
-ARG arm_download=8.4.3-linux-arm64
+ARG arm_download=8.6.0-linux-arm64
 
 RUN if [ "$TARGETARCH" = "amd64" ]; \
     then download=$amd_download; \
