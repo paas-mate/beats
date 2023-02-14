@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - 7.x
   workflow_dispatch:
 
 permissions:
@@ -34,7 +34,7 @@ jobs:
           context: ./filebeat
           file: ./filebeat/Dockerfile
           push: true
-          tags: ttbb/filebeat:nake
+          tags: ttbb/filebeat:nake-7
           platforms: linux/amd64,linux/arm64
       - name: build push heartbeat
         uses: docker/build-push-action@v3
@@ -42,7 +42,7 @@ jobs:
           context: ./heartbeat
           file: ./heartbeat/Dockerfile
           push: true
-          tags: ttbb/heartbeat:nake
+          tags: ttbb/heartbeat:nake-7
           platforms: linux/amd64,linux/arm64
       - name: build push metricbeat
         uses: docker/build-push-action@v3
@@ -50,7 +50,7 @@ jobs:
           context: ./metricbeat
           file: ./metricbeat/Dockerfile
           push: true
-          tags: ttbb/metricbeat:nake
+          tags: ttbb/metricbeat:nake-7
           platforms: linux/amd64,linux/arm64
       - name: build push metricbeat
         uses: docker/build-push-action@v3
@@ -58,5 +58,5 @@ jobs:
           context: ./packetbeat
           file: ./packetbeat/Dockerfile
           push: true
-          tags: ttbb/packetbeat:nake
+          tags: ttbb/packetbeat:nake-7
           platforms: linux/amd64,linux/arm64
